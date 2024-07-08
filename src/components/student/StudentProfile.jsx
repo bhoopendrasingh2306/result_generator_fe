@@ -9,7 +9,7 @@ const StudentProfile = () => {
     const [email,setEmail] = useState("");
     const [ address,setAddress] = useState("");
     const [ instname, setInstname] = useState("");
-    const [instcode, setInstcode] = useState("");
+    // const [instcode, setInstcode] = useState("");
     const [roll, setRoll]= useState("");
 
 
@@ -32,7 +32,7 @@ const StudentProfile = () => {
                 setAddress(result.data.result.address);
                 setEmail(result.data.result.email);
                 setRoll(result.data.result.roll_no);
-                setInstcode(result.data.result.institute_code);
+                // setInstcode(result.data.result.institute_code);
                 setInstname(result.data.result.institute_name);
             })
             .catch((err) => console.log("lasst err",err));
@@ -90,12 +90,12 @@ const StudentProfile = () => {
                             <input className="md:w-96 w-52 px-4 border rounded-md text-white" type="text"  value={instname} readOnly/>
                         </label>
                     </div>
-                    <div className="flex  py-3 px-2 my-2 justify-center">
+                    {/* <div className="flex  py-3 px-2 my-2 justify-center">
                         <label >Institute Code :
                             <br></br>
                             <input className="md:w-96 w-52 px-4 border rounded-md text-white" type="text" value={instcode} readOnly />
                         </label>
-                    </div>
+                    </div> */}
                     <div className="flex py-1 px-2 my-2 justify-center align-middle">
                         <button type="submit " className=" bg-gradient-to-r from-violet-500 to-red-800 py-1 px-3 rounded-md justify-center" onClick={viewresult} >View Result</button>
                     </div>

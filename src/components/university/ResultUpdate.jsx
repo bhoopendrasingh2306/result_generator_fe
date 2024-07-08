@@ -91,6 +91,9 @@ const ResutlUpdate = () => {
                     <span className="text-lime-500 my-6 mx-2">{message}</span>
                 </div>
             </div>
+            <div className="flex justify-center">
+                <p>NOTE: First fill the respective marks of subjects below the marks section. Click on CALCULATE RESULT and then click on SUBMIT. </p>
+            </div>
 
 
         </div>
