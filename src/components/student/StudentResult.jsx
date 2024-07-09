@@ -27,7 +27,7 @@ const StudentResult =()=>{
     const collectiondata = () => {
        
         axios
-            .get(`http://localhost:5000/result/getresult/${roll_no}`)
+            .get(`https://result-generator-be.onrender.com/result/getresult/${roll_no}`)
             .then((result) => {
                 console.log("progile end result is:", result); 
                 if(result.status===203){

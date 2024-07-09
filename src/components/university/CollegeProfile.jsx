@@ -23,7 +23,7 @@ const CollegeProfile = () => {
     const studentList = () => {
 
         axios
-            .get(`http://localhost:5000/university/studentlist/${institute_name}`)
+            .get(`https://result-generator-be.onrender.com/university/studentlist/${institute_name}`)
             .then((result) => {
                 console.log("student list", result.data.result);
                 setList(result.data.result);
@@ -33,7 +33,7 @@ const CollegeProfile = () => {
     const collectiondata = () => {
 
         axios
-            .get(`http://localhost:5000/university/profile/${institute_name}`)
+            .get(`https://result-generator-be.onrender.com/university/profile/${institute_name}`)
             .then((result) => {
                 console.log("progile end result is:", result.data.result); // result contain the response comming from axios
                 setAddress(result.data.result.institute_address);

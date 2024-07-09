@@ -25,7 +25,7 @@ const StudentProfile = () => {
     const collectiondata = () => {
        
         axios
-            .get(`http://localhost:5000/student/profile/${roll_no}`)
+            .get(`https://result-generator-be.onrender.com/profile/${roll_no}`)
             .then((result) => {
                 // console.log("progile end result is:", result.data.result); // result contain the response comming from axios
                 setName(result.data.result.name);

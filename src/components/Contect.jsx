@@ -16,7 +16,7 @@ const Contect = () => {
         }
         // axios is used to send data from UI to database or from react to database  .then is used to resolve promis/e
         axios
-            .post("http://localhost:5000/student/contect", { name, email, description })
+            .post("https://result-generator-be.onrender.com/student/contect", { name, email, description })
             .then((result) => {
                 console.log("front end result is:", result); // result contain the response comming from axios
           

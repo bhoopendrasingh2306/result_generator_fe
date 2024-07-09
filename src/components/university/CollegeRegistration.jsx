@@ -21,7 +21,7 @@ const CollegeRegistration = () => {
         }
         // axios is used to send data from UI to database or from react to database  .then is used to resolve promis/e
         axios
-            .post("http://localhost:5000/university/signup", { institute_name:name, institute_email:email, institute_address:address, password:password })
+            .post("https://result-generator-be.onrender.com/university/signup", { institute_name:name, institute_email:email, institute_address:address, password:password })
             .then((result) => {
                 console.log(" college front end result is:", result); // result contain the response comming from axios
                 if (result.data.auth) {

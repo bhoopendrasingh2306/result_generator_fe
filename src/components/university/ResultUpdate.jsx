@@ -25,7 +25,7 @@ const ResutlUpdate = () => {
 
     const submitResult = () => {
         axios
-            .post("http://localhost:5000/result/uploadresult", { name, hindi, english, physics, chemistry, math, cgpa, roll_no, institute_name })
+            .post("https://result-generator-be.onrender.com/result/uploadresult", { name, hindi, english, physics, chemistry, math, cgpa, roll_no, institute_name })
             .then((result) => {
                 console.log("submit result is:", result); // result contain the response comming from axios
 
