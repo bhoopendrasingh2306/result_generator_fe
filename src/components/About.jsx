@@ -9,7 +9,7 @@ const About = () => {
             <div className="flex flex-col sm:flex-row justify-center my-10 ">
                 <img className="border mx-5 sm:mt-5 h-20 w-20 " src={auth} alt="author" />
                 <p className="lg:mx-5 md:mx-5 my-5">I am <b>Bhoopendra Singh</b>, a final year student at the Institute of Engineering and Technology (IET) Lucknow, specializing in Computer Science and Engineering. My passion lies in web development, where I have honed my skills and knowledge in various programming languages and technologies.
-                    I am proficient in JavaScript, HTML, and CSS, and have hands-on experience with frameworks such as React.js, Node.js, and Express.js. My expertise extends to both relational databases like MySQL and non-relational databases like MongoDB.
+                    I am proficient in JavaScript, C++, HTML, and CSS, data structures and algorithms, and have hands-on experience with frameworks such as React.js, Node.js, and Express.js. My expertise extends to both relational databases like MySQL and non-relational databases like MongoDB.
                     Throughout my academic journey, I have worked on numerous full-stack development projects, which have strengthened my problem-solving abilities and enhanced my understanding of end-to-end web application development. I am eager to continue learning and contributing to the field of web development, leveraging my skills to create innovative and efficient solutions.
                 </p>
             </div>
