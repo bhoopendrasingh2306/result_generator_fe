@@ -17,9 +17,9 @@ const Navbar = ()=>{
                         <span className="text-xl tracking-tight">Result management system</span>
                     </div>
                     <ul className="hidden lg:flex ml-14 space-x-12">
-                        <li><a href="/" className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text" >home</a></li>
-                        <li><a href="/about" className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text" >about</a></li>
-                        <li><a href="/contect" className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text" >contact</a></li>
+                        <li><Link to="/" className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text" >home</Link></li>
+                        <li><Link to="/about" className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text" >about</Link></li>
+                        <li><Link to="/contect" className="hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text" >contact</Link></li>
                     </ul>
                     <div className="hidden lg:flex justify-center space-x-12 items-center">
                         <Link to='/studentregistration' className="py-2 px-3 border rounded-md">Student Panel</Link>
