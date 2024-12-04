@@ -34,9 +34,9 @@ const Navbar = ()=>{
                 {mobiledrawerOpen && (
                     <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
                         <ul>
-                        <li className="py-4 hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text"><a href="/" >home</a></li>
-                        <li className="py-4 hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text"><a href="/about" >about</a></li>
-                        <li className="py-4 hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text"><a href="/contect" >contact</a></li>
+                        <li className="py-4 hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text"><Link to="/" >home</Link></li>
+                        <li className="py-4 hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text"><Link to="/about" >about</Link></li>
+                        <li className="py-4 hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-800 hover:text-transparent hover:bg-clip-text"><Link to="/contect" >contact</Link></li>
                         </ul>
                         <div className="flex space-x-6">
                         <Link to='/studentregistration' className="py-2 px-3 border rounded-md">Student Panel</Link>
