@@ -55,32 +55,84 @@ const ResutlUpdate = () => {
                     <h2 className="text-1xl " id="about">{roll_no}</h2>
                 </div>
             </div>
-            <div className="w-3/4 justify-center border my-5 mx-auto rounded-lg">
-                <ul className="h-16 flex flex-col sm:flex-row sm:h-8 justify-around mx-auto border bg-slate-600 text-black rounded-lg">
-                    <li className="py-1">subject</li>
-                    <li className="py-1">marks</li>
-                </ul>
-                <ul className="flex flex-col sm:flex-row justify-around mt-2 mx-auto border bg-slate-200 text-black">
-                    <li>Hindi</li>
-                    <li><input className="w-12 border-red-700 text-black bg-slate-200" type="number" min={0} max={100} onChange={(e) => setHindi(e.target.value)} value={hindi} /></li>
-                </ul>
-                <ul className="flex flex-col sm:flex-row justify-around mt-2 mx-auto border  bg-slate-400 text-black">
-                    <li>English</li>
-                    <li><input className="w-16 border-red-700 text-black bg-slate-400" type="number" min={0} max={100} onChange={(e) => setEnglish(e.target.value)} value={english} /></li>
-                </ul>
-                <ul className="flex flex-col sm:flex-row justify-around mt-2 mx-auto border bg-slate-200 text-black">
-                    <li>Math</li>
-                    <li><input className="w-12 border-red-700 text-black bg-slate-200" type="number" min={0} max={100} onChange={(e) => setMath(e.target.value)} value={math} /></li>
-                </ul>
-                <ul className="flex flex-col sm:flex-row justify-around mt-2 mx-auto border  bg-slate-400 text-black">
-                    <li>Chemistry</li>
-                    <li><input className="w-12 border-red-700 text-black bg-slate-400" type="number" min={0} max={100} onChange={(e) => setChemistry(e.target.value)} value={chemistry} /></li>
-                </ul>
-                <ul className="flex flex-col sm:flex-row justify-around mt-2 mx-auto border bg-slate-200 text-black">
-                    <li>Physics</li>
-                    <li><input className="w-12 border-red-700 text-black bg-slate-200" type="number" min={0} max={100} onChange={(e) => setPhysics(e.target.value)} value={physics} /></li>
-                </ul>
+            <div className="w-3/4 mx-auto my-5 border rounded-lg overflow-x-auto">
+                <table className="table-auto w-full border-collapse border border-slate-600">
+                    <thead className="bg-slate-600 text-black">
+                        <tr>
+                            <th className="border border-slate-600 py-2 px-4 text-center">SUBJECT</th>
+                            <th className="border border-slate-600 py-2 px-4 text-center">MARKS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className="bg-slate-200">
+                            <td className="border border-slate-600 py-2 px-4 text-center text-black">DATA ANALYTICS</td>
+                            <td className="border border-slate-600 py-2 px-4 text-center">
+                                <input
+                                    className="w-16 border border-red-700 text-black bg-slate-200 text-center"
+                                    type="number"
+                                    min={0}
+                                    max={100}
+                                    onChange={(e) => setHindi(e.target.value)}
+                                    value={hindi}
+                                />
+                            </td>
+                        </tr>
+                        <tr className="bg-slate-400">
+                            <td className="border border-slate-600 py-2 px-4 text-center text-black">MACHINE LEARNING TECHNIQUES</td>
+                            <td className="border border-slate-600 py-2 px-4 text-center">
+                                <input
+                                    className="w-16 border border-red-700 text-black bg-slate-400 text-center"
+                                    type="number"
+                                    min={0}
+                                    max={100}
+                                    onChange={(e) => setEnglish(e.target.value)}
+                                    value={english}
+                                />
+                            </td>
+                        </tr>
+                        <tr className="bg-slate-200">
+                            <td className="border border-slate-600 py-2 px-4 text-center text-black">DATABASE MANAGEMENT SYSTEM</td>
+                            <td className="border border-slate-600 py-2 px-4 text-center">
+                                <input
+                                    className="w-16 border border-red-700 text-black bg-slate-200 text-center"
+                                    type="number"
+                                    min={0}
+                                    max={100}
+                                    onChange={(e) => setMath(e.target.value)}
+                                    value={math}
+                                />
+                            </td>
+                        </tr>
+                        <tr className="bg-slate-400">
+                            <td className="border border-slate-600 py-2 px-4 text-center text-black">COMPILER DESIGN</td>
+                            <td className="border border-slate-600 py-2 px-4 text-center">
+                                <input
+                                    className="w-16 border border-red-700 text-black bg-slate-400 text-center"
+                                    type="number"
+                                    min={0}
+                                    max={100}
+                                    onChange={(e) => setChemistry(e.target.value)}
+                                    value={chemistry}
+                                />
+                            </td>
+                        </tr>
+                        <tr className="bg-slate-200">
+                            <td className="border border-slate-600 py-2 px-4 text-center text-black">DESIGN AND ANALYSIS OF ALGORITHM</td>
+                            <td className="border border-slate-600 py-2 px-4 text-center">
+                                <input
+                                    className="w-16 border border-red-700 text-black bg-slate-200 text-center"
+                                    type="number"
+                                    min={0}
+                                    max={100}
+                                    onChange={(e) => setPhysics(e.target.value)}
+                                    value={physics}
+                                />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+
             <div className=" flex justify-around">
                 <div className="flex flex-col sm:flex-row">
                     <button className="w-48 h-10 border-red-700 text-white bg-red-500 px-2 py-2 mt-5  rounded-lg" onClick={calculateResult}>calculate result</button>

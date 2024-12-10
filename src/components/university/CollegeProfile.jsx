@@ -90,36 +90,48 @@ const CollegeProfile = () => {
                     </div>
                 </form>
                 <span className="my-4 mx-auto text-2xl bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text ">Registered Students List</span>
-                <div className="w-3/4 justify-center border mx-auto">
-                        <ul className="flex flex-col sm:flex-row justify-evenly mt-2 mx-auto border">
-                            <li>Sr.No</li>
-                            <li className="border inline-block">Roll No</li>
-                            <li>Student Name</li>
-                            <li>Generate Result</li>
-                        </ul>
-                        {list.length > 0 ? (
-                            list.map((item, index) => (
-                                <ul className="flex flex-col sm:flex-row justify-evenly my-2 mx-auto border" key={item._id}>
-                                    <li>{index + 1}</li>
-                                    <li className="border inline-block">{item.roll_no}</li>
-                                    <li >{item.name}</li>
-                                    <li>
-                                        <button type="submit " className=" bg-gradient-to-r from-violet-500 to-red-800 py-1 px-3 rounded-md justify-center inline-block"
-                                            onClick={() => {
-                                                updateresult(item._id);  
-                                                localStorage.setItem("userzzz", JSON.stringify(item));
-                                            }}
-                                            
-                                        >
-                                            Generate Result
-                                        </button>
-                                    </li>
-                                </ul>
-                            ))
-                        ) : (
-                            <span>No student is registered yet</span>
-                        )}
-                    </div>
+                <div className="w-3/4 mx-auto border rounded-lg overflow-x-auto">
+                    <table className="table-auto w-full border-collapse border border-slate-600">
+                        <thead className="bg-slate-600 text-black">
+                            <tr>
+                                <th className="border border-slate-600 py-2 px-4 text-center">Sr. No</th>
+                                <th className="border border-slate-600 py-2 px-4 text-center">Roll No</th>
+                                <th className="border border-slate-600 py-2 px-4 text-center">Student Name</th>
+                                <th className="border border-slate-600 py-2 px-4 text-center">Generate Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {list.length > 0 ? (
+                                list.map((item, index) => (
+                                    <tr key={item._id} className={index % 2 === 0 ? "bg-slate-200" : "bg-slate-400"}>
+                                        <td className="border border-slate-600 py-2 px-4 text-center text-black">{index + 1}</td>
+                                        <td className="border border-slate-600 py-2 px-4 text-center text-black">{item.roll_no}</td>
+                                        <td className="border border-slate-600 py-2 px-4 text-center text-black">{item.name}</td>
+                                        <td className="border border-slate-600 py-2 px-4 text-center">
+                                            <button
+                                                type="submit"
+                                                className="bg-gradient-to-r from-violet-500 to-red-800 py-1 px-3 rounded-md text-white"
+                                                onClick={() => {
+                                                    updateresult(item._id);
+                                                    localStorage.setItem("userzzz", JSON.stringify(item));
+                                                }}
+                                            >
+                                                Generate Result
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="4" className="border border-slate-600 py-4 text-center">
+                                        No student is registered yet
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </div>
     )
