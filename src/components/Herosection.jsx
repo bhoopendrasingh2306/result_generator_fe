@@ -17,6 +17,8 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import logo from "../assets/rm_logo.png"
 
+
+import StripeCheckout from 'react-stripe-checkout';
 const Herosection = () => {
     AOS.init();
     const [name, setName] = useState("");
@@ -24,6 +26,33 @@ const Herosection = () => {
     const [description, setDescription] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState(false);
+
+    const [product,setProduct] = useState({
+        name: 'Payment',
+        price: 99,
+        productBy: "team",
+      })
+
+    const makePayment = async(token) =>{
+        const body = {
+            token, 
+            product
+        }
+        const headers = {
+            "Content-Type": "application/json"
+        }
+
+        return fetch(`https://result-generator-be.onrender.com/payment`,{
+            method: 'POST',
+            headers,
+            body: JSON.stringify(body)
+        }).then(response=>{
+            console.log("response: " , response)
+            const {status} = response;
+            console.log("STATUS: " , status)
+        })
+        .catch(error=> console.log("error:", error))
+    }
 
     const collectiondata = (e) => {
         e.preventDefault();
@@ -58,10 +87,12 @@ const Herosection = () => {
                 It is a comprehensive platform designed to streamline the process of managing and accessing academic results for colleges and students. This project serves as a practical application of full-stack web development skills, integrating user-friendly interfaces with robust backend functionalities.
             </p>
             <div className="flex justify-center my-10">
-                <Link to='/studentregistration' className="bg-gradient-to-r from-orange-500 to-orange-800 py-3 px-4 mx-3 rounded-md cursor-pointer">Student Panel</Link>
-                <Link to='/collegeregistration' className="py-3 px-4 rounded-md border">College Admin Panel</Link>
+                {/* <Link to='/studentregistration' className="bg-gradient-to-r from-orange-500 to-orange-800 py-3 px-4 mx-3 rounded-md cursor-pointer">Student Panel</Link>
+                <Link to='/collegeregistration' className="py-3 px-4 rounded-md border">College Admin Panel</Link> */}
+                <StripeCheckout stripeKey="pk_test_51QUa98D5CFmAyuW6vCTmGbf1pN1y9TGMrl0kYbCPC8NWVvHuuFOnqmYDIdV3zzge57YdDGbdkh3BrIkofJb9Kz4p00ytNsU7pL" token={makePayment} name= "Payment" amount={product.price *100}>
+                    <button className="bg-gradient-to-r from-yellow-200 to-yellow-800 py-3 px-4 mx-3 rounded-md cursor-pointer">Get Premium</button>
+                </StripeCheckout>
             </div>
-
 
 
             {/* about section */}
